@@ -1,0 +1,88 @@
+* {
+    margin: 0; /**/
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.game-board {
+    width: 70%;
+    height: 500px;
+    border: 1px solid #333;
+    border-bottom: 15px solid rgb(51, 152, 51);
+    border-radius: 10px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(blue, #fff);
+
+}
+
+.pipe { 
+    position: absolute; /* para q n interfira na outra img*/
+    bottom: 0; /*vertitcal da img*/
+    width: 47px; /*tamanho da img*/
+    /* left:118px; "hotizontal da img" */
+    animation: pipe-animation 3s infinite linear;/*nome da key frames que coloquei e secunds , linear para ser constante */
+
+}
+
+.mario {
+    margin-left: 60px;
+    width: 80px;
+    position: absolute;
+    bottom: 0
+}
+/*criei uma class jump para colocar no js*/
+.jump {
+    animation: jump 400ms ease-out; /*tempo que vai durar a animaçao*/
+
+}
+
+.nuven {
+    position: absolute;
+    left: 400px;
+
+}
+
+.juiz {
+    position: absolute;
+    left: 800px;
+
+}
+
+@keyframes pipe-animation { /*keyframes onde vai começar e onde vai terminar */
+    from { /*começo*/
+        right: -80%; /*para lele começar fora da tela*/
+    }
+
+    to { /*fim*/
+        right: 250%; /*terminar fora da tela , pq essa porcentagem passa da tela*/
+    }
+
+} 
+
+@keyframes jump { /*animaçao do jump*/
+
+    0% { /*começa no bottom zero*/
+        bottom: 0;
+    }
+
+    40% { /* sobe e  mantem até 60%*/
+        bottom: 150px;
+    }
+
+    50% {
+        bottom: 150px;
+    }
+
+    60% {
+        bottom: 150px;
+    }
+
+
+
+    100% { /* no 100% ele volta para o zero*/
+        bottom: 0;
+    }
+}
